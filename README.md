@@ -56,6 +56,7 @@ technical/plos
 $ find technical/ -type l
 ````
 The above command type l returns the symbolic link in the directory. The command has no return because there is no symbolic link in the directory.
+
 **Searching and executing command on a file by name** 
 Format: `find <path> -name <pattern> -exec <command> {} \;`
 This command-line option allow users to search files and execute a command on the returned files.
