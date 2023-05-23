@@ -26,13 +26,14 @@ technical/911report/chapter-1.txt
 technical/911report/chapter-11.txt
 technical/911report/chapter-13.1.txt
 ````
+- This find command is searching for all the .txt files with `1` as the last character in their name. 
 ````
 $ find technical/911report/ -name "*2.txt"
 technical/911report/chapter-12.txt
 technical/911report/chapter-13.2.txt
 technical/911report/chapter-2.txt
 ````
-
+- This find command is searching for all the .txt files with `2` as the last character in their name. 
 **Searching a file by type** 
 Format: `find <path> -type <type>>`
 This command-line option allow users to search files of a certain type.
@@ -52,6 +53,7 @@ technical/government/Media
 technical/government/Post_Rate_Comm
 technical/plos
 ````
+- The `type d` request the command `find` to only search for directories. 
 ````
 $ find technical/ -type l
 ````
@@ -93,6 +95,7 @@ technical/biomed/ar612.txt
 technical/biomed/gb-2001-2-4-research0012.txt
 technical/biomed/gb-2002-3-3-research0012.txt
 ````
+- The command `echo` print the result of `find` to the terminal. The outputs are the path to the txt files with `12` as the last two character in their name.
 ````
 $ find technical/ -type d -exec echo {} \;
 technical/
@@ -107,3 +110,36 @@ technical/government/Media
 technical/government/Post_Rate_Comm
 technical/plos
 ````
+- The command `echo` print the result of `find` to the terminal. The outputs are the path to the directories inside `techinical/`.
+
+**Creating a new file with all the path** 
+````
+$ find technical/biomed/ -name "*12.txt" > pathes.txt\;
+technical/
+technical/911report
+technical/biomed
+technical/government
+technical/government/About_LSC
+technical/government/Alcohol_Problems
+technical/government/Env_Prot_Agen
+technical/government/Gen_Account_Office
+technical/government/Media
+technical/government/Post_Rate_Comm
+technical/plos
+````
+- This command create a new text file that contains the search result of find.
+````
+$ find technical/biomed/ -type d -exec echo {} > pathes.txt\;
+technical/
+technical/911report
+technical/biomed
+technical/government
+technical/government/About_LSC
+technical/government/Alcohol_Problems
+technical/government/Env_Prot_Agen
+technical/government/Gen_Account_Office
+technical/government/Media
+technical/government/Post_Rate_Comm
+technical/plos
+````
+- The pathes are stored in this new file which can be used systematically for testing or other purposes.
